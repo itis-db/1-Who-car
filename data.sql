@@ -11,8 +11,8 @@ from (
           (4,'Контракт','Contract'),
           (5,'КТ','Point')
 ) as d(
-    activitytypeid, 
-    name, 
+    activitytypeid,
+    name,
     sysname
 )
 where not exists(
@@ -35,7 +35,7 @@ from (
           (5,'Северная Америка'),
           (6,'Южная Америка')
 ) as d(
-    areaid, 
+    areaid,
     name
 )
 where not exists(
@@ -80,10 +80,10 @@ from (
            (24, 5, P3.2.1.1, 'КТ В-2-1-1', 15),
            (25, 5, P3.2.1.2, 'КТ В-2-1-2', 16)
 ) as d(
-    activityid, 
-    activitytypeid, 
-    code, 
-    name, 
+    activityid,
+    activitytypeid,
+    code,
+    name,
     parentid
 )
 where not exists(
@@ -105,9 +105,9 @@ from (
           (2, 2, 2016, 2020),
           (3, 3, 2022, null)
 ) as d(
-    programid, 
-    indexnum, 
-    yearstart, 
+    programid,
+    indexnum,
+    yearstart,
     yearfinish
 )
 where not exists(
@@ -128,7 +128,7 @@ from (
           (6, null),
           (7, 19)
 ) as d(
-    subprogramid, 
+    subprogramid,
     indexnum
 )
 where not exists(
@@ -149,7 +149,7 @@ from (
           (10, 'Z'),
           (11, null),
 ) as d(
-    projectid, 
+    projectid,
     targetdescr
 )
 where not exists(
@@ -171,7 +171,7 @@ from (
           (15, 5),
           (16, 6)
 ) as d(
-    contractid, 
+    contractid,
     areaid
 )
 where not exists(
@@ -198,8 +198,8 @@ from (
           (24, to_date('24-02-2024', 'DD-MM-YYYY'), to_date('24-02-2025', 'DD-MM-YYYY')),
           (25, to_date('25-02-2025', 'DD-MM-YYYY'), to_date('25-02-2026', 'DD-MM-YYYY'))
 ) as d(
-    pointid, 
-    plandate, 
+    pointid,
+    plandate,
     factdate
 )
 where not exists(

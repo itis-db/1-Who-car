@@ -14,7 +14,7 @@ create table if not exists activity
         unique,
     activitytypeid integer not null,
     code           text    not null,
-    name           text    not null, 
+    name           text    not null,
     parentid       integer,
 
     foreign key (activitytypeid) references activitytype(activitytypeid) on delete cascade,
@@ -30,7 +30,7 @@ create table if not exists program
     yearstart      integer,
     yearfinish     integer,
 
-    foreign key (programid) references activity(activityid) on delete cascade 
+    foreign key (programid) references activity(activityid) on delete cascade
 );
 
 create table if not exists subprogram

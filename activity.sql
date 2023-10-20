@@ -10,9 +10,9 @@ with recursive activity_hierarchy as (
   from activity a
   where (pn_activityid is null and a.parentid is null)
      or a.activityid = pn_activityid
-  
+
   union all
-  
+
   select
     a.activityid,
     a.activitytypeid,
@@ -24,9 +24,9 @@ with recursive activity_hierarchy as (
   from activity a
   join activity_hierarchy ah on a.parentid = ah.activityid
   left join "contract" c on a.activityid = c.activityid
-  
+
   union all
-  
+
   select
     p.activityid,
     p.activitytypeid,
@@ -37,9 +37,9 @@ with recursive activity_hierarchy as (
     5 as level
   from activity p
   where p.parentid in (select activityid from activity_hierarchy where level = 4)
-  
+
   union all
-  
+
   select
     c.activityid,
     c.activitytypeid,
